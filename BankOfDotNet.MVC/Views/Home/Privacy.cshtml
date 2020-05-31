@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+<p>Claims</p>
+<dl>
+    @foreach (var claim in User.Claims)
+    {
+    <dt>@{Html.Raw(claim.Type.ToString());}</dt>
+    <dt>@{ Html.Raw(claim.ValueType.ToString());}</dt>
+        }
+</dl>
